@@ -3,4 +3,4 @@ flask-cors
 pydantic
 nltk
 PyPDF2
-google-generativeai
+google-genai
