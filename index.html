@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificador de Emails</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Classificador de Emails com IA</h1>
+        <p class="subtitle">Classifique emails e receba respostas automáticas</p>
+        
+        <div class="form-container">
+            <div class="input-section">
+                <label for="emailText">Digite ou cole o conteúdo do email:</label>
+                <textarea id="emailText" placeholder="Cole o texto do email aqui..." rows="8"></textarea>
+            </div>
+
+            <div class="input-section">
+                <label for="fileUpload">Ou faça upload de um arquivo (.txt ou .pdf):</label>
+                <input type="file" id="fileUpload" accept=".txt,.pdf">
+            </div>
+
+            <button id="classifyBtn" class="btn-primary">Classificar Email</button>
+        </div>
+
+        <div id="results" class="results hidden">
+            <h2>Resultados</h2>
+            <div class="result-card">
+                <div class="result-item">
+                    <span class="label">Categoria:</span>
+                    <span id="category" class="category-badge"></span>
+                </div>
+                <div class="result-item">
+                    <span class="label">Resposta Sugerida:</span>
+                    <p id="response" class="response-text"></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Processando email...</p>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
