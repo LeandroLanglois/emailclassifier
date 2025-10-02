@@ -2,7 +2,7 @@ import os
 import re
 import io
 import json
-from flask import Flask, request, jsonify
+from flask import Flask, request, render_template, jsonify
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
 from pydantic import BaseModel
@@ -160,6 +160,9 @@ Responda SOMENTE em JSON válido.
 def health():
     return jsonify({"status": "ok", "gemini_enabled": bool(GEMINI_API_KEY)}), 200
 
+@app.route("/", methods=["GET"])
+def index():
+    return render_template('index.html')
 @app.route("/analyze", methods=["POST"])
 def analyze():
     try:
